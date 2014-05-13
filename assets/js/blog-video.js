@@ -54,7 +54,7 @@
             ratioClass = null,
             padding = null;
 
-        if (widthMatch.length >= 1 && heightMatch.length >= 1) {
+        if (widthMatch && heightMatch && widthMatch.length >= 1 && heightMatch.length >= 1) {
             var ratio = heightMatch[1] / widthMatch[1] * 100
 
             ratioClass = this.getRatioClass(ratio)
@@ -75,7 +75,7 @@
         $.oc.blogPostForm.replacePlaceholder(
             $placeholder,
             wrapperText,
-            '![<'+placeholderIndex+'>](video)',
+            '!['+placeholderIndex+'](video)',
             wrapperText
         );
 

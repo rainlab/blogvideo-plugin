@@ -7,13 +7,13 @@ This plugin extends the [RainLab Blog plugin](/plugin/rainlab-blog) with the res
 
 Use the following syntax to insert a video placeholder to a blog post:
 
-    ![<1>](video)
+    ![1](video)
 
 The number in the first part is the placeholder index. If you use multiple videos in a post you should use unique indexes:
 
-    ![<1>](video)
+    ![1](video)
 
-    ![<2>](video)
+    ![2](video)
 
 ##Styling the responsive videos
 
