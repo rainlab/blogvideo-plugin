@@ -1,9 +1,8 @@
-blog-video-plugin
-===========
+# Blog Video plugin
 
 This plugin extends the [RainLab Blog plugin](/plugin/rainlab-blog) with the responsive video embedding features. The plugin was tested with Vimeo and YouTube videos, but in theory it can be used with any video service which uses iframes for embedding.
 
-##Adding video to a post
+## Adding video to a post
 
 Use the following syntax to insert a video placeholder to a blog post:
 
@@ -15,7 +14,7 @@ The number in the first part is the placeholder index. If you use multiple video
 
     ![2](video)
 
-##Styling the responsive videos
+## Styling the responsive videos
 
 The plugin adds a wrapping DIV element around the embedded iframe element. The wrapper allows to make the video responsive, fit the containing column and maintain the aspect ratio.
 
