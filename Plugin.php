@@ -10,6 +10,8 @@ use RainLab\Blog\Classes\TagProcessor;
 class Plugin extends PluginBase
 {
 
+    public $require = ['RainLab.Blog'];
+
     public function pluginDetails()
     {
         return [
