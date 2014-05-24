@@ -25,12 +25,11 @@ class Plugin extends PluginBase
     /**
      * Register method, called when the plugin is first registered.
      */
-    public function register() 
+    public function register()
     {
-        BackendController::extend(function($controller) { 
-            if ($controller instanceof PostsController)
-                $controller->addJs('/plugins/rainlab/blogvideo/assets/js/blog-video.js');
-                $controller->addCss('/plugins/rainlab/blogvideo/assets/css/blog-video.css');
+        PostsController::extend(function($controller) {
+            $controller->addJs('/plugins/rainlab/blogvideo/assets/js/blog-video.js');
+            $controller->addCss('/plugins/rainlab/blogvideo/assets/css/blog-video.css');
         });
 
         /*
@@ -47,7 +46,7 @@ class Plugin extends PluginBase
                 '<span class="video-placeholder" data-index="$1">
                     <a href="#">Click to embed a video...</a>
                     '.$popup.'
-                </span>', 
+                </span>',
             $input);
         });
     }
