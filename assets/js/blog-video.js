@@ -14,16 +14,15 @@
              * We use it because the popup contents
              * is loaded from the hidden script element
              */
-            $this.popup()
+            $this.popup({
+                content: $('script[type="text/template"]', $this).html()
+            })
 
-            var popup = $this.data('oc.popup')
-
-            popup.setContent($('script[type="text/template"]', this).html())
-            var $textarea = $('textarea', popup.$target),
+            var popup = $this.data('oc.popup'),
+                $textarea = $('textarea', popup.$content),
                 placeholderIndex = $this.data('index')
 
-
-            setTimeout(function(){ 
+            setTimeout(function(){
                 popup.setLoading(false)
                 $textarea.focus()
             }, 500)
@@ -43,10 +42,9 @@
             return
         }
 
-        /* 
+        /*
          * Calculate the aspect ratio from the iframe width and height
          */
-
         var widthRegex = /width\s*=\s*"([0-9]+)"/g,
             heightRegex = /height\s*=\s*"([0-9]+)"/g,
             widthMatch = widthRegex.exec(text),

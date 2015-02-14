@@ -37,12 +37,11 @@ class Plugin extends PluginBase
          */
 
         TagProcessor::instance()->registerCallback(function($input, $preview){
-            if (!$preview)
-                return $input;
+            if (!$preview) return $input;
 
             $popup = file_get_contents(__DIR__.'/partials/popup.htm');
 
-            return preg_replace('|\<img alt="([0-9]+)" src="video" \/>|m', 
+            return preg_replace('|\<img src="video" alt="([0-9]+)" \/>|m', 
                 '<span class="video-placeholder" data-index="$1">
                     <a href="#">Click to embed a video...</a>
                     '.$popup.'
