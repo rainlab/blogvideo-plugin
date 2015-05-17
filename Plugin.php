@@ -9,7 +9,6 @@ use RainLab\Blog\Classes\TagProcessor;
 
 class Plugin extends PluginBase
 {
-
     public $require = ['RainLab.Blog'];
 
     public function pluginDetails()
@@ -18,7 +17,8 @@ class Plugin extends PluginBase
             'name'        => 'Blog Video Extension',
             'description' => 'Adds responsive video embedding features to the RainLab Blog module.',
             'author'      => 'Alexey Bobkov, Samuel Georges',
-            'icon'        => 'icon-video-camera'
+            'icon'        => 'icon-video-camera',
+            'homepage'    => 'https://github.com/rainlab/blogvideo-plugin'
         ];
     }
 
@@ -35,8 +35,7 @@ class Plugin extends PluginBase
         /*
          * Register the video tag processing callback
          */
-
-        TagProcessor::instance()->registerCallback(function($input, $preview){
+        TagProcessor::instance()->registerCallback(function($input, $preview) {
             if (!$preview) return $input;
 
             $popup = file_get_contents(__DIR__.'/partials/popup.htm');
