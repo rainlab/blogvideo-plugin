@@ -1,15 +1,37 @@
 +function ($) { "use strict";
     var VideoTagProcessor = function() {
+        this.$form = $('#post-form')
+        this.$markdownEditor = $('[data-field-name=content] [data-control=markdowneditor]:first', this.$form)
+
+        this.addToolbarButton()
         this.initHandlers()
+    }
+
+    VideoTagProcessor.prototype.addToolbarButton = function() {
+        this.buttonClickCount = 1
+
+        var self = this,
+            $button = this.$markdownEditor.markdownEditor('addToolbarButton', 'blogvideo', {
+                label: 'markdowneditor.video',
+                icon: 'video',
+                action: 'insertLine',
+                template: '\n\n![1](video)\n',
+                insertAfter: 'image'
+            })
+
+        $button.on('click', function() {
+            $button.data('button-template', '\n\n!['+self.buttonClickCount+'](video)\n')
+            self.buttonClickCount++
+        })
     }
 
     VideoTagProcessor.prototype.initHandlers = function() {
         var self = this
 
-        $(document).on('click', '#blog-post-preview span.video-placeholder', function() {
+        this.$markdownEditor.on('click', '.editor-preview span.video-placeholder', function() {
             var $this = $(this)
 
-            /* 
+            /*
              * This is an unusual way to display a popup.
              * We use it because the popup contents
              * is loaded from the hidden script element
