@@ -2,7 +2,7 @@
 
 use Backend;
 use Controller;
-use Backend\Classes\Controller as BackendController;
+use Backend\Classes\BackendController;
 use System\Classes\PluginBase;
 use RainLab\Blog\Controllers\Posts as PostsController;
 use RainLab\Blog\Classes\TagProcessor;
@@ -28,6 +28,7 @@ class Plugin extends PluginBase
     public function register()
     {
         PostsController::extend(function($controller) {
+            if (!in_array(BackendController::$action, ['create', 'update'])) return;
             $controller->addJs('/plugins/rainlab/blogvideo/assets/js/blog-video.js');
             $controller->addCss('/plugins/rainlab/blogvideo/assets/css/blog-video.css');
         });
