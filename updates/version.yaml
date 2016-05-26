@@ -1,3 +1,5 @@
 1.0.1: First version of Blog Video plugin
 1.0.2: Fixes issue where videos cannot be uploaded caused by latest Markdown library.
 1.1.0: Adds a new Video button to the Markdown editor toolbar.
+1.1.1: Minor styling update.
+1.1.2: Update toolbar icon.

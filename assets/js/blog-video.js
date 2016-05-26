@@ -13,7 +13,7 @@
         var self = this,
             $button = this.$markdownEditor.markdownEditor('addToolbarButton', 'blogvideo', {
                 label: 'markdowneditor.video',
-                icon: 'video',
+                icon: 'video-camera',
                 action: 'insertLine',
                 template: '\n\n![1](video)\n',
                 insertAfter: 'image'
