@@ -17,5 +17,10 @@
             "role": "Co-founder"
         }
     ],
+    "require": {
+        "php": ">=5.5.9",
+        "composer/installers": "~1.0",
+        "rainlab/blog-plugin": "dev-master"
+    },
     "minimum-stability": "dev"
 }
