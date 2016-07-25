@@ -28,7 +28,10 @@ class Plugin extends PluginBase
     public function register()
     {
         PostsController::extend(function($controller) {
-            if (!in_array(BackendController::$action, ['create', 'update'])) return;
+            if (!in_array(BackendController::$action, ['create', 'update'])) {
+                return;
+            }
+
             $controller->addJs('/plugins/rainlab/blogvideo/assets/js/blog-video.js');
             $controller->addCss('/plugins/rainlab/blogvideo/assets/css/blog-video.css');
         });
@@ -37,7 +40,9 @@ class Plugin extends PluginBase
          * Register the video tag processing callback
          */
         TagProcessor::instance()->registerCallback(function($input, $preview) {
-            if (!$preview) return $input;
+            if (!$preview) {
+                return $input;
+            }
 
             $popup = file_get_contents(__DIR__.'/partials/popup.htm');
 
