@@ -1,0 +1,26 @@
+{
+    "name": "rainlab/blogvideo-plugin",
+    "type": "october-plugin",
+    "description": "Blog video plugin for October CMS",
+    "homepage": "https://octobercms.com/plugin/rainlab-blogvideo",
+    "keywords": ["october", "octobercms", "blog", "video"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Bobkov",
+            "email": "aleksey.bobkov@gmail.com",
+            "role": "Co-founder"
+        },
+        {
+            "name": "Samuel Georges",
+            "email": "daftspunky@gmail.com",
+            "role": "Co-founder"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "composer/installers": "~1.0",
+        "rainlab/blog-plugin": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
